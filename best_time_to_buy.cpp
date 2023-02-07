@@ -18,42 +18,57 @@ using namespace std;
 
 //     return ans;
 // }
-int maxProfit(vector<int>& lol) {
-        int ans ;
-        int max_ind = 0;
-        int min_ind = 0 ; 
-        int max = INT_MIN;
-        int min = INT_MAX;
+// int maxProfit(vector<int>& lol) {
+//         int ans ;
+//         int max_ind = 0;
+//         int min_ind = 0 ; 
+//         int max = INT_MIN;
+//         int min = INT_MAX;
 
-    for (int i = 0; i < lol.size(); i++)
-    {
+//     for (int i = 0; i < lol.size(); i++)
+//     {
  
-         if(min>lol[i]){
-          min_ind = i ;
-            min = lol[i];
-      }
-    }
-    cout<<"min value"<<min<<endl;
-    cout<<min_ind<<endl;
+//          if(min>lol[i]){
+//           min_ind = i ;
+//             min = lol[i];
+//       }
+//     }
+//     cout<<"min value"<<min<<endl;
+//     cout<<min_ind<<endl;
 
-for (int i = min_ind; i < lol.size(); i++)
-    {
+// for (int i = min_ind; i < lol.size(); i++)
+//     {
  
-           if(max<lol[i]){
-          max_ind = i;
-          max = lol[i];
-      }
-    }
-    cout<<"max value after index "<<max<<endl;
-    cout<<max_ind<<endl ; 
-    if(min_ind>max_ind){
-        return max-min ; 
+//            if(max<lol[i]){
+//           max_ind = i;
+//           max = lol[i];
+//       }
+//     }
+//     cout<<"max value after index "<<max<<endl;
+//     cout<<max_ind<<endl ; 
+//     if(min_ind>max_ind){
+//         return max-min ; 
 
-    }
+//     }
 
-    return 0;
+//     return 0;
+//     }
+ int maxProfit(vector<int>& lol) {
+        int min_val  =  INT_MAX ; 
+        int profit = 0 ; 
+        int ans  = profit ; 
+        for(int i = 0 ; i< lol.size() ; i++){
+            
+            min_val  = min(min_val , lol[i]);
+            profit = - min_val + lol[i] ; 
+            ans = max(profit , ans) ; 
+            
+            
+         }
+        return ans;
+        
+        
     }
-
 int main()
 {
     cout << "jai shree ram" << endl;
